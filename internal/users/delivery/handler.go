@@ -1,7 +1,6 @@
 package delivery
 
 import (
-	"github.com/gofiber/fiber/v2"
 	"github.com/kapralovs/introverts-right-hemisphere-test-task/internal/users"
 )
 
@@ -15,6 +14,6 @@ func New(uc users.Usecase) *Handler {
 	}
 }
 
-func (h *Handler) Get(c *fiber.Ctx) error    {}
-func (h *Handler) Delete(c *fiber.Ctx) error {}
-func (h *Handler) Edit(c *fiber.Ctx) error   {}
+// func (h *Handler) Get(c *fiber.Ctx) error    {}
+// func (h *Handler) Delete(c *fiber.Ctx) error {}
+// func (h *Handler) Edit(c *fiber.Ctx) error   {}
