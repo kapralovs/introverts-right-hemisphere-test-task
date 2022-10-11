@@ -1,2 +1,2 @@
-# introverts-right-hemisphere-test-task
+# simple-test-api
 Тестовое задание для компании Правое Полушарие Интроверта
