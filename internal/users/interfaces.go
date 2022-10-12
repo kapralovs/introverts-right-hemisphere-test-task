@@ -1,15 +1,15 @@
 package users
 
-import "github.com/kapralovs/introverts-right-hemisphere-test-task/internal/models"
+import "github.com/kapralovs/simple-test-api/internal/models"
 
 type Usecase interface {
-	Get() ([]*models.User, error)
-	Edit(id int) error
-	Delete(id int) error
+	GetUsers() ([]*models.User, error)
+	EditUser(data *models.User) error
+	DeleteUser(id string) error
 }
 
 type Repository interface {
-	Get() ([]*models.User, error)
-	Edit(id int) error
-	Delete(id int) error
+	GetUsers() ([]*models.User, error)
+	EditUser(data *models.User) error
+	DeleteUser(id string) error
 }

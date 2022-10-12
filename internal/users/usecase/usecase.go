@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"github.com/kapralovs/introverts-right-hemisphere-test-task/internal/models"
-	"github.com/kapralovs/introverts-right-hemisphere-test-task/internal/users"
+	"github.com/kapralovs/simple-test-api/internal/models"
+	"github.com/kapralovs/simple-test-api/internal/users"
 )
 
 type UserUsecase struct {
@@ -15,15 +15,26 @@ func New(r users.Repository) *UserUsecase {
 	}
 }
 
-func (uc *UserUsecase) Get() ([]*models.User, error) {
-	users := []*models.User{}
+func (uc *UserUsecase) GetUsers() ([]*models.User, error) {
+	users, err := uc.repo.GetUsers()
+	if err != nil {
+		return nil, err
+	}
 	return users, nil
 }
 
-func (uc *UserUsecase) Edit(id int) error {
+func (uc *UserUsecase) EditUser(data *models.User) error {
+	err := uc.repo.EditUser(data)
+	if err != nil {
+		return err
+	}
 	return nil
 }
 
-func (uc *UserUsecase) Delete(id int) error {
+func (uc *UserUsecase) DeleteUser(id string) error {
+	err := uc.repo.DeleteUser(id)
+	if err != nil {
+		return err
+	}
 	return nil
 }
