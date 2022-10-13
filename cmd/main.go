@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"time"
 
 	"github.com/joho/godotenv"
 	"github.com/kapralovs/simple-test-api/internal/server"
@@ -13,8 +14,8 @@ func main() {
 		log.Fatalf("error loading env variables: %s", err)
 	}
 
-	router := echo.New()
-	server := server.New(router)
+	time.Sleep(5 * time.Second)
+	server := server.New(echo.New())
 	if err := server.Run(); err != nil {
 		log.Fatal(err)
 	}

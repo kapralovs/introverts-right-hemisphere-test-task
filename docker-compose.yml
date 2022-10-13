@@ -1,9 +1,5 @@
 version: "3.9"
 services:
-  simple-test-api:
-    build: .
-    ports:
-      - "8080:8080"
   mongo:
     image: mongo
     restart: always
@@ -12,3 +8,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
     ports:
       - "27017:27017"
+    command: mongod --bind_ip mongo
+  simple-test-api:
+    build: .
+    ports:
+      - "8080:8080"
